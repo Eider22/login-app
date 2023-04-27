@@ -25,7 +25,7 @@ const LoginComponent = () => {
             id="user"
             {...register("user", userSchema)}
           />
-          {/* TODO: Separar el error en un componente */}
+          {/* TODO: Separate the error into a component */}
           {errors.user && (
             <span className="text-danger text-small d-block mb-2">
               {errors.user.message}
@@ -42,7 +42,7 @@ const LoginComponent = () => {
             id="password"
             {...register("password", passwordSchema)}
           />
-          {/* TODO: Separar el error en un componente */}
+          {/* TODO: Separate the error into a component */}
           {errors.password && (
             <span className="text-danger text-small d-block mb-2">
               {errors.password.message}
