@@ -1,5 +1,5 @@
 #incorrect-credentials {
-  color: rgb(211, 62, 62);
+  color: rgb(212, 63, 63);
 }
 
 .container-login {
@@ -10,13 +10,13 @@
   width: 40%;
   min-width: 400px;
 
-  background:linear-gradient(45deg, #424e5a , #435c6d , #1a2c38 );
+  background:linear-gradient(25deg, #b7c7d9, #d6dbde, #d8e2eb, #42595e );
 }
 
 .col-4 {
   width: 100%;
 
-  color: rgba(255, 255, 255, 0.865);
+  /* color: rgba(255, 255, 255, 0.865); */
 }
 
 .login-btn{
