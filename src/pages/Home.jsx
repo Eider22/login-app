@@ -4,6 +4,7 @@ import CardComponent from '../components/home/CardComponent';
 
 export const Home = () => {
     const [games, setGames] = useState([]);
+    
 
     const getGamesFromService = async() => {
         const data = await getFreeGames();
@@ -25,6 +26,9 @@ export const Home = () => {
                 games.map((item) => {
                  return <CardComponent item={item} key={item.id}/>                  
                 })}
+                {
+                  !games && <div>NO HAY RESULTADOS PARA LA BUSQUEDA</div>
+                }
             </div>
           </div>
         </>
