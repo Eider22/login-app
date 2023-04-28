@@ -1,5 +1,5 @@
 const userSchema = {
-  required: "El email es requerido",
+  required: "El usuario es requerido",
   pattern: {
     value: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
     message: "El email no es válido",

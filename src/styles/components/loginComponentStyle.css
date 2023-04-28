@@ -1,0 +1,24 @@
+#incorrect-credentials {
+  color: rgb(212, 63, 63);
+}
+
+.container-login {
+  border: solid 4px rgb(152, 198, 242, 0.5);
+  padding: 2rem;
+  margin-top: 5vh;
+
+  width: 40%;
+  min-width: 400px;
+
+  background:linear-gradient(25deg, #b7c7d9, #d6dbde, #d8e2eb, #42595e );
+}
+
+.col-4 {
+  width: 100%;
+
+  /* color: rgba(255, 255, 255, 0.865); */
+}
+
+.login-btn{
+  background-color: #4095c4;
+}
