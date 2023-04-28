@@ -1,15 +1,13 @@
-
-const setUser = (user) => {
-    localStorage.setItem("user", JSON.stringify(user));
+const manageStorage = {
+    setUser : (user) => {
+        localStorage.setItem("user", JSON.stringify(user));
+    },
+    getUser : () => {
+        return JSON.parse(localStorage.getItem("user"));
+    },
+    removeUser : () => {
+        localStorage.removeItem("user");
+    }
 }
 
-const getUser = () => {
-    return JSON.parse(localStorage.getItem("user"));
-}
-
-const removeUser = () => {
-    localStorage.removeItem("user");
-}
-
-export { setUser, getUser, removeUser }
-
+export default manageStorage;
