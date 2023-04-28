@@ -1,22 +1,31 @@
+import axios from "axios";
+import { authConfig } from "../config/authConfig";
 
-const data = {
-    user:"john.1701627015@ucaldas.edu.co",
-    password: "1234"
-}
-const login = async () => {
-  const response = await fetch("http://localhost:8080/auth/login", {
-    method: "POST",
-    mode: "cors", 
-    credentials: "same-origin", 
-    headers: {
-      "Content-Type": "application/json",
+const checkAuthentication = async (user, password) => {
+  let url = `${authConfig.urlAuthApi}/auth/login`;
+
+  const response = await axios.post(
+    url,
+    {
+      user: `${user}`,
+      password: `${password}`,
     },
-    body: JSON.stringify(data),
-  });
+    {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
 
-  const json = await response.json();
-  console.log(json);
+  if (response.status !== 200) {
+    // return true;
+  }
+
+  const data = response.data;
+
+  const authenticatedUser = data.object.user;
+
+  return authenticatedUser;
 };
 
-
-export default login;
+export { checkAuthentication };
