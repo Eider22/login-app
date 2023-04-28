@@ -61,6 +61,7 @@ const getFreeGames = async () => {
   const response = await requestApi(options);
   console.log("response api free games → ", response);
   console.log("data api free games → ", response.data);
+  return response.data;
 };
 
 const requestApi = async (options) => {
