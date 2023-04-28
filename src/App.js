@@ -2,15 +2,17 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import LoginComponent from "./components/LoginComponent";
+import { AuthProvider } from "./contexts/authContext";
+import { AppRouter } from "./routes/AppRouter";
 
 function App() {
   return (
     <div className="App">
       App
-      <Routes>
-        <Route path="/" element={<Home/>}></Route>
-        <Route path="/login" element={<LoginComponent/>}></Route>
-      </Routes>
+      <AuthProvider>
+        <AppRouter/>
+      </AuthProvider>
+        
     </div>
   );
 }
