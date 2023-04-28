@@ -7,8 +7,8 @@ import { AppRouter } from "./routes/AppRouter";
 
 function App() {
   return (
+    
     <div className="App">
-      App
       <AuthProvider>
         <AppRouter/>
       </AuthProvider>

@@ -2,6 +2,7 @@ import { createContext, useState } from "react";
 import React from "react";
 import { checkAuthentication } from "../services/api.service";
 import manageStorage from "../services/storageService";
+import { useNavigate } from "react-router";
 
 export const AuthContext = createContext();
 
@@ -10,6 +11,7 @@ export const AuthProvider = ({ children }) => {
   let [usuario, setusuario] = useState({});
   const [authError, setAuthError] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
   
   const login = async (user, password) => {
     //función para autenticar
@@ -25,18 +27,17 @@ export const AuthProvider = ({ children }) => {
     setIsAuthenticated(true);
     //guardar usuario en el local storage
     manageStorage.setUser(usuario);
+    navigate("/")
   };
 
   const logout = () => {
     //marcar el usuario como no autenticado
-    isAuthenticated(false);
+    setIsAuthenticated(false);
     //regresar el usuario al estado inicial
-    setusuario({
-      token: "",
-      firstName: "",
-      secondName: "",
-      email: "",
-    });
+    setusuario({});
+    //borrar el user de local storage
+    manageStorage.removeUser();
+    navigate("/login");
   };
 
   return (
