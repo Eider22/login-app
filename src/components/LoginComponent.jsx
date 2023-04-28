@@ -90,7 +90,7 @@ const LoginComponent = () => {
 
               <div className="row mt-5">
                 <div className="col">
-                  <button type="submit" className="btn btn-primary">
+                  <button type="submit" className="btn btn-primary login-btn">
                     Iniciar Sesion
                   </button>
                 </div>

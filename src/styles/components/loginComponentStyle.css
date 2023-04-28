@@ -9,8 +9,16 @@
 
   width: 40%;
   min-width: 400px;
+
+  background:linear-gradient(45deg, #424e5a , #435c6d , #1a2c38 );
 }
 
 .col-4 {
   width: 100%;
+
+  color: rgba(255, 255, 255, 0.865);
+}
+
+.login-btn{
+  background-color: #4095c4;
 }
