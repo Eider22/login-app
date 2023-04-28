@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getFreeGames } from '../services/api.service';
+import CardComponent from '../components/home/CardComponent';
 
 export const Home = () => {
     const [games, setGames] = useState([]);
@@ -22,17 +23,7 @@ export const Home = () => {
             <div className="row">
               {games &&
                 games.map((item) => {
-                  return (
-                    <div className="col">
-                      <div className="card m-2" style={{ width: "18rem" }}>
-                        <img src={item.thumbnail} className="card-img-top" alt="..." />
-                        <div className="card-body">
-                          <h5 className="card-title">{item.title}</h5>
-                          <p className="card-text"><strong>Developed by:</strong> {item.developer}</p>
-                        </div>
-                      </div>
-                    </div>
-                  );
+                 return <CardComponent item={item} />                  
                 })}
             </div>
           </div>

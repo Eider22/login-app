@@ -16,7 +16,7 @@ const NavBar = () => {
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <Link to="/" className="navbar-brand">
-          REST-aurante
+          FREE-games
         </Link>
         <button
           className="navbar-toggler"
@@ -38,7 +38,7 @@ const NavBar = () => {
               </li>
             </ul>
             <h4 className="me-4">
-                <small className="text-body-secondary">Hola, {user?.firstName}</small>
+                <small className="text-body-secondary">Hola, {user?.firstName} 👋</small>
             </h4>
             <form className="d-flex" role="search">
               <input
