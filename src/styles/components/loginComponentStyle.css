@@ -1,3 +1,16 @@
-#incorrect-credentials{
-    color: red;
+#incorrect-credentials {
+  color: rgb(211, 62, 62);
+}
+
+.container-login {
+  border: solid 4px rgb(152, 198, 242, 0.5);
+  padding: 2rem;
+  margin-top: 5vh;
+
+  width: 40%;
+  min-width: 400px;
+}
+
+.col-4 {
+  width: 100%;
 }

@@ -25,29 +25,30 @@ const LoginComponent = () => {
       <br />
       <br />
       <br />
-      <div className="container text-center">
+      <div className="container text-center container-login">
         <div className="row align-items-center">
           <div className="col-4"></div>
           <div className="col-4">
             <br />
-            <h1>INICIAR SESION</h1>
-            {authError && (
-              <span id="incorrect-credentials">Credenciales erroneas, intentelo de nuevo</span>
-            )}
+            <h1>INICIAR SESIÓN</h1>
             <br />
-            <form className="container" onSubmit={handleSubmit(enviarDatos)}>
+            <form
+              className="container container-form"
+              onSubmit={handleSubmit(enviarDatos)}
+            >
               <div className="row mt-2">
                 <div className="col">
                   <div className="form-group">
                     <label htmlFor="user">Nombre de usuario</label>
                     <input
+                      autoComplete="off"
                       type="text"
                       className="form-control"
                       id="user"
                       placeholder="Usuario"
                       {...register("user", userSchema)}
                     />
-                     {/* TODO: Separate the error into a component */}
+                    {/* TODO: Separate the error into a component */}
                     {errors.user && (
                       <span className="text-danger text-small d-block mb-2">
                         {errors.user.message}
@@ -61,13 +62,14 @@ const LoginComponent = () => {
                   <div className="form-group">
                     <label htmlFor="password">Contraseña</label>
                     <input
+                      autoComplete="off"
                       type="password"
                       className="form-control"
                       id="password"
                       placeholder="Contraseña"
                       {...register("password", passwordSchema)}
                     />
-                     {/* TODO: Separate the error into a component */}
+                    {/* TODO: Separate the error into a component */}
                     {errors.password && (
                       <span className="text-danger text-small d-block mb-2">
                         {errors.password.message}
@@ -76,6 +78,15 @@ const LoginComponent = () => {
                   </div>
                 </div>
               </div>
+
+              <br />
+
+              {authError && (
+                <span id="incorrect-credentials">
+                  Credenciales erroneas, intentelo de nuevo
+                </span>
+              )}
+              <br />
 
               <div className="row mt-5">
                 <div className="col">
