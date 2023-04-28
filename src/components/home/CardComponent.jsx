@@ -1,6 +1,6 @@
 const CardComponent =({item})=>{
     return (
-        <div className="col">
+        <div className="col" key={item.id}>
           <div className="card m-2" style={{ width: "18rem" }}>
             <img src={item.thumbnail} className="card-img-top" alt="..." />
             <div className="card-body">

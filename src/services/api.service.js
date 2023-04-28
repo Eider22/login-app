@@ -1,5 +1,6 @@
 import axios from "axios";
 import { authConfig } from "../config/authConfig";
+import { freeGameApiConfig } from "../config/freeGameApiconfig";
 
 const checkAuthentication = async (user, password) => {
   let url = `${authConfig.urlAuthApi}/auth/login`;
@@ -43,14 +44,17 @@ const checkAuthentication = async (user, password) => {
   return authenticatedUser;
 };
 
-const getFreeGames = async () => {
+const getFreeGames = async (optionalCategory = null) => {
+  const params = {
+    category: "shooter"
+  };
+  if(optionalCategory){
+    params.category = optionalCategory;
+  }
   const options = {
     method: "GET",
-    url: `${authConfig.urlFreeToGameApi}`,
-    params: {
-      tag: "3d.mmorpg.fantasy.pvp",
-      platform: "pc",
-    },
+    url: `${freeGameApiConfig.urlFreeToGameApi}/games?`,
+    params,
     headers: {
       "content-type": "application/octet-stream",
       "X-RapidAPI-Key": "e659cb101amshf849054fdd88a19p1e7ac8jsnd3036b8a3fe6",
@@ -59,6 +63,9 @@ const getFreeGames = async () => {
   };
 
   const response = await requestApi(options);
+  if (!response) {
+    return null;
+  }
   console.log("response api free games → ", response);
   console.log("data api free games → ", response.data);
   return response.data;
@@ -69,7 +76,7 @@ const requestApi = async (options) => {
     const response = await axios.request(options);
     return response;
   } catch (error) {
-    console.error(error);
+    return null;
   }
 };
 
