@@ -46,7 +46,7 @@ const checkAuthentication = async (user, password) => {
 const getFreeGames = async () => {
   const options = {
     method: "GET",
-    url: "https://free-to-play-games-database.p.rapidapi.com/api/filter",
+    url: `${authConfig.urlFreeToGameApi}`,
     params: {
       tag: "3d.mmorpg.fantasy.pvp",
       platform: "pc",
